@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, type FormEvent } from 'react'
 import './App.css'
 
 interface Todo {
@@ -31,7 +31,7 @@ function App() {
     }
   }
 
-  const handleAddTodo = async (e: React.FormEvent) => {
+  const handleAddTodo = async (e: FormEvent) => {
     e.preventDefault()
     if (!newTodo.trim()) return
 

@@ -56,6 +56,9 @@ def update_todo(todo_id):
             return jsonify({"error": "Todo not found"}), 404
         
         data = request.get_json()
+        if not data or not isinstance(data, dict):
+            return jsonify({"error": "Invalid request body"}), 400
+        
         todo_data = db[key]
         if isinstance(todo_data, str):
             todo_data = json.loads(todo_data)
