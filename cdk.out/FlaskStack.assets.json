@@ -1,0 +1,34 @@
+{
+  "version": "48.0.0",
+  "files": {
+    "dc0114176a4b9e9e0221eab9612a83ad6bf2f9d6a988ccca55a60a340d07eb96": {
+      "displayName": "FlaskStack Template",
+      "source": {
+        "path": "FlaskStack.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-current_region-f4459ea1": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "dc0114176a4b9e9e0221eab9612a83ad6bf2f9d6a988ccca55a60a340d07eb96.json",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    }
+  },
+  "dockerImages": {
+    "838c588cb52332537c555233537fca862d81513eea57bf515fca49b8892a5f08": {
+      "displayName": "WebAdapterFunction/AssetImage",
+      "source": {
+        "directory": "asset.838c588cb52332537c555233537fca862d81513eea57bf515fca49b8892a5f08"
+      },
+      "destinations": {
+        "current_account-current_region-567f90a0": {
+          "repositoryName": "cdk-hnb659fds-container-assets-${AWS::AccountId}-${AWS::Region}",
+          "imageTag": "838c588cb52332537c555233537fca862d81513eea57bf515fca49b8892a5f08",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-image-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    }
+  }
+}

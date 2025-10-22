@@ -7,5 +7,17 @@ dependencies = [
     "flask>=3.1.2",
     "flask-cors>=6.0.1",
     "replit>=4.1.2",
+    "aws-wsgi",
 ]
 
+[project.optional-dependencies]
+dev = [
+    "aws-cdk-lib",
+    "constructs",
+    "aws-cdk.aws-iam",
+    # Add any other development tools here, e.g., "pytest", "black"
+]
+
+# [build-system]
+# requires = ["uv"]
+# build-backend = "uv.build"

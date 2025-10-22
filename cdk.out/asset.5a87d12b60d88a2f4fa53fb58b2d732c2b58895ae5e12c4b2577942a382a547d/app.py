@@ -91,6 +91,8 @@ def health():
     return jsonify({"status": "healthy"}), 200
 
 def handler(event, context):
+    # The awsgi.response() method wraps your Flask app and the event/context
+    # to produce a response compatible with API Gateway or ALB.
     return aws_wsgi.response(app, event, context)
 
 
