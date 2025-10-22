@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import aws_cdk as cdk
-from infra.backend_stack import BackendStack
+from infra.stack import FullStack
 
 app = cdk.App()
-BackendStack(app, "BackendStack")
+FullStack(app, "BackendStack")
 app.synth()

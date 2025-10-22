@@ -12,6 +12,7 @@ dev = [
     "aws-cdk-lib",
     "constructs",
     "aws-cdk.aws-iam",
+    "black", 
     # Add any other development tools here, e.g., "pytest", "black"
 ]
 
