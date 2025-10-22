@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import aws_cdk as cdk
-from infra.backend_stack import FlaskStack
+from infra.backend_stack import BackendStack
 
 app = cdk.App()
-FlaskStack(app, "FlaskStack")
+BackendStack(app, "BackendStack")
 app.synth()

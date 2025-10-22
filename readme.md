@@ -12,9 +12,13 @@ uv run npm run dev
 
 ```sh
 # example curl 
-curl -XPOST localhost:8080/api/todos -H 'content-type: application/json' -d '{"title": "foo"}'
-curl -XPOST https://stcc0splr5.execute-api.us-east-1.amazonaws.com/prod/api/todos  -H 'content-type: application/json' -d '{"title": "foo"}'
-curl -XPOST https://m5wd3zbs25oorfj53afzmnwhwi0mnuhg.lambda-url.us-east-1.on.aws/api/todos  -H 'content-type: application/json' -d '{"title": "foo"}'
+curl -X POST https://mxvmaaocp7lsxttykgkn5w4qyy0mgcqd.lambda-url.us-east-1.on.aws/todos \
+  -H "Content-Type: application/json" \
+  -d '{"description": "buy milk"}'
+
+curl https://mxvmaaocp7lsxttykgkn5w4qyy0mgcqd.lambda-url.us-east-1.on.aws/todos
+curl -X DELETE https://mxvmaaocp7lsxttykgkn5w4qyy0mgcqd.lambda-url.us-east-1.on.aws/todos/<id>
+
 ```
 
 ```sh

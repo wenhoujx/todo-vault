@@ -16,4 +16,4 @@ COPY server/app.py /var/task/app.py
 
 # Set the CMD to run your application. The Web Adapter will automatically
 # detect and run the Flask application.
-CMD [ "app.py" ]
+CMD ["flask", "run", "--host=0.0.0.0", "--port=8080"]
