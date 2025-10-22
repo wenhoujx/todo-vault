@@ -3,8 +3,8 @@ from flask_cors import CORS
 import json
 import os
 from datetime import datetime
-from replit import db
 
+db = {}
 app = Flask(__name__)
 CORS(app)
 

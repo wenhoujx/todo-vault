@@ -8,7 +8,7 @@ interface Todo {
   created_at: string
 }
 
-const API_URL = window.location.origin.replace(':5000', ':8080')
+const API_URL = window.location.origin.replace(':5002', ':8080')
 
 function App() {
   const [todos, setTodos] = useState<Todo[]>([])
