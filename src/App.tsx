@@ -4,7 +4,7 @@ import './App.css'
 interface Todo {
   id: string
   description: string
-  completed: boolean
+  done: boolean
   created_at: string
 }
 
@@ -59,7 +59,7 @@ function App() {
       const response = await fetch(`${API_URL}/todos/${todo.id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ completed: !todo.completed }),
+        body: JSON.stringify({ done: !todo.done }),
       })
       
       if (response.ok) {
@@ -109,10 +109,10 @@ function App() {
             <p className="empty-state">No todos yet. Add one above!</p>
           ) : (
             todos.map(todo => (
-              <div key={todo.id} className={`todo-item ${todo.completed ? 'completed' : ''}`}>
+              <div key={todo.id} className={`todo-item ${todo.done ? 'completed' : ''}`}>
                 <input
                   type="checkbox"
-                  checked={todo.completed}
+                  checked={todo.done}
                   onChange={() => handleToggleTodo(todo)}
                   className="todo-checkbox"
                 />
@@ -131,7 +131,7 @@ function App() {
         <div className="stats">
           {todos.length > 0 && (
             <p>
-              {todos.filter(t => !t.completed).length} of {todos.length} tasks remaining
+              {todos.filter(t => !t.done).length} of {todos.length} tasks remaining
             </p>
           )}
         </div>

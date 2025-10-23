@@ -28,6 +28,6 @@ docker run -d -p 8080:8080 $(docker build -q .)
 ## deploy BE via cdk
 
 ```sh
-uv pip compile pyproject.toml -o requirements.txt
-
+make build-fe 
+make deploy 
 ```
