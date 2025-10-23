@@ -3,12 +3,12 @@ import './App.css'
 
 interface Todo {
   id: string
-  title: string
+  description: string
   completed: boolean
   created_at: string
 }
 
-const API_URL = window.location.origin.replace(':5002', ':8080')
+const API_URL = "https://k6oxzhlefup26c55ovblprjmke0nxhkj.lambda-url.us-east-1.on.aws"
 
 function App() {
   const [todos, setTodos] = useState<Todo[]>([])
@@ -21,7 +21,7 @@ function App() {
 
   const fetchTodos = async () => {
     try {
-      const response = await fetch(`${API_URL}/api/todos`)
+      const response = await fetch(`${API_URL}/todos`)
       if (response.ok) {
         const data = await response.json()
         setTodos(data)
@@ -37,10 +37,10 @@ function App() {
 
     setLoading(true)
     try {
-      const response = await fetch(`${API_URL}/api/todos`, {
+      const response = await fetch(`${API_URL}/todos`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ title: newTodo }),
+        body: JSON.stringify({ description: newTodo }),
       })
       
       if (response.ok) {
@@ -56,7 +56,7 @@ function App() {
 
   const handleToggleTodo = async (todo: Todo) => {
     try {
-      const response = await fetch(`${API_URL}/api/todos/${todo.id}`, {
+      const response = await fetch(`${API_URL}/todos/${todo.id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ completed: !todo.completed }),
@@ -73,7 +73,7 @@ function App() {
 
   const handleDeleteTodo = async (id: string) => {
     try {
-      const response = await fetch(`${API_URL}/api/todos/${id}`, {
+      const response = await fetch(`${API_URL}/todos/${id}`, {
         method: 'DELETE',
       })
       
@@ -116,7 +116,7 @@ function App() {
                   onChange={() => handleToggleTodo(todo)}
                   className="todo-checkbox"
                 />
-                <span className="todo-title">{todo.title}</span>
+                <span className="todo-title">{todo.description}</span>
                 <button
                   onClick={() => handleDeleteTodo(todo.id)}
                   className="delete-button"
